@@ -2,11 +2,16 @@ using System;
 
 public class Word{
     // Word member variables
-    public string _text;
+    private string _text;
     private bool _isHidden;
+
+    public Word(string text){
+        _text = text; 
+    }
 
     public void Hide(){
         _isHidden = true;
+        _text = GetDisplayText();
     }
     public void Show(){
         _isHidden = false;

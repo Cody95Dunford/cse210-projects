@@ -11,8 +11,7 @@ public class Scripture{
     public Scripture(Reference reference, string text){
         List<string> temporaryWord = text.Split(' ').ToList();
         foreach (string word in temporaryWord){
-            Word memorizeScripture = new Word();
-            memorizeScripture._text = word;
+            Word memorizeScripture = new Word(word);
             memorizeScripture.Show();
             words.Add(memorizeScripture);            
         }
@@ -30,13 +29,12 @@ public class Scripture{
                 break;
             }
             words[index].Hide();
-            words[index]._text = words[index].GetDisplayText();
         }
     }
     public string GetDisplayText(){
         string fullText = "";
         foreach (Word word in words){
-            fullText += word._text + " ";
+            fullText += word.GetDisplayText() + " ";
         }
         return fullText;
     }

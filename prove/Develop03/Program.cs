@@ -8,9 +8,15 @@ class Program
         Scripture scripture1 = new Scripture(reference1,"Trust in the Lord with all thine heart; and lean not unto thine own understanding. In all thy ways acknowledge him, and he shall direct thy paths.");
 
         do{
+            // display the reference and scripture
             Console.WriteLine(reference1.GetDisplayText() + scripture1.GetDisplayText());
+            // instructions for the user
             Console.WriteLine("Press enter to continue, or type 'quit' to finish");
             string response = Console.ReadLine();
+            /* if statement:
+            if the user presses 'enter' then program hides 3 random words.
+            if the user types 'quit' then the program exits.
+            */
             if (response == ""){
                 Random hidingNumber = new Random();
                 int actualNumber = hidingNumber.Next(1, 4);
@@ -21,5 +27,6 @@ class Program
                 Environment.Exit(0);
             }            
         } while (scripture1.IsCompletelyHidden() == false);
+        Console.WriteLine(reference1.GetDisplayText() + scripture1.GetDisplayText());
     }
 }
