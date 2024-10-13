@@ -9,8 +9,8 @@ public class Order{
         _customer = customer;
     }
 
-    public float TotalPrice(){
-        float total = 0;
+    public double TotalPrice(){
+        double total = 0;
         foreach (Product product in _productList){
             total += product.GetTotalCost();
         }
@@ -26,7 +26,7 @@ public class Order{
     public string PackingLabel(){
         string label = "";
         foreach (Product product in _productList){
-            label += product.GetLabel() + "/n";
+            label += product.GetLabel() + "\n";
         }
         return label;
     }

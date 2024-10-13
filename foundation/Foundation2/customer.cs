@@ -14,6 +14,6 @@ public class Customer{
     }
 
     public string GetLabel(){
-        return _name + "/n" + _address.fullAddress();
+        return _name + "\n" + _address.fullAddress();
     }
 }
