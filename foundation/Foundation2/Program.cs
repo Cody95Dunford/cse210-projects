@@ -27,7 +27,7 @@ class Program
         string packing = order1.PackingLabel();
         string shipping = order1.ShippingList();
 
-        Console.WriteLine($"The total cost is {total}");
+        Console.WriteLine($"The total cost is {total}"); 
         Console.WriteLine("\nPacking Label");
         Console.WriteLine(packing);
         Console.WriteLine("\nShipping Label");
