@@ -16,30 +16,54 @@ public class ReflectionActivity : Activity
     /*Run method*/
     public void Run()
     {
+        Console.WriteLine("Get Ready...");
+        ShowSpinner(7);
+        Console.WriteLine("Consider the following prompt.\n");
+        string prompt = GetRandomPrompt();
+        DisplayPrompt(prompt);
+        Console.WriteLine("When you have something in mind, press enter to continue");
+        Console.ReadLine();
+        Console.WriteLine("Consider the following questions.");
+        Console.Write($"You may begin in: ");
+        ShowCountDown(5);
+        Console.Clear();
+        string question1 = GetRandomQuestion();
+        DisplayQuestion(question1);
+        string question2 = GetRandomQuestion();
+        DisplayQuestion(question2);
+        Console.WriteLine();
 
     }
 
     /*GetRandomPrompt method*/
-    public void GetRandomPrompt()
+    public string GetRandomPrompt()
     {
-
+        Random randomPrompt = new Random();
+        int index = randomPrompt.Next(_prompts.Count);
+        return _prompts[index];
     }
 
     /*GetRandomQuestion method*/
-    public void GetRandomQuestion()
+    public string GetRandomQuestion()
     {
-
+        Random randomPrompt = new Random();
+        int index = randomPrompt.Next(_questions.Count);
+        string question = _questions[index];
+        _questions.Remove(_questions[index]);
+        return question;
     }
 
     /*DisplayPrompt method*/
-    public void DisplayPrompt()
+    public void DisplayPrompt(string prompt)
     {
-
+        Console.WriteLine($"-- {prompt} --\n");
     }
 
     /*DisplayQuestion method*/
-    public void DisplayQuestion()
+    public void DisplayQuestion(string question)
     {
-
+        Console.Write($"> {question} ");
+        ShowSpinner(5);
+        Console.WriteLine();
     }
 }
