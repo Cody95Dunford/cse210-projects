@@ -2,7 +2,7 @@ using System;
 
 class EternalGoal : Goal
 {
-    public EternalGoal(string name, string description, string points)
+    public EternalGoal(string name, string description, int points)
     : base(name, description, points)
     {
 
@@ -10,12 +10,7 @@ class EternalGoal : Goal
 
     public override void RecordEvent()
     {
-        Console.Write("\nWhat is the name of your goal? ");
-        _name = Console.ReadLine();
-        Console.Write("\nWhat is a short description of your goal? ");
-        _description = Console.ReadLine();
-        Console.Write("\nWhat is the amount of points associated with your goal? ");
-        _points = Console.ReadLine();
+        
     }
 
     public override bool isComplete()
@@ -25,11 +20,11 @@ class EternalGoal : Goal
 
     public override string GetDetailsString()
     {
-        return "";
+        return "[ ] " + _name + " (" + _description + ")";
     }
 
     public override string GetStringRepresentation()
     {
-        return "";
+        return "Eternal Goal," + _name + "," + _description + "," + _points;
     }    
 }

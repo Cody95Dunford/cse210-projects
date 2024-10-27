@@ -1,9 +1,12 @@
 using System;
+using System.Linq.Expressions;
 
 class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Develop06 World!");
+        GoalManager program = new GoalManager();
+
+        program.start();
     }
 }
